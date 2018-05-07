@@ -1,0 +1,22 @@
+{
+  "license": "AGPL-3.0",
+  "name": "purescript-jquery-fancy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output",
+    "result"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.3.0",
+    "purescript-jquery": "^4.3.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^3.0.0"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/colehaus/purescript-jquery-fancy.git"
+  }
+}
