@@ -72,3 +72,15 @@ setText s = J.setText s <<< unwrap
 
 getText :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) String
 getText = J.getText <<< unwrap
+
+hideOne :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) Unit
+hideOne = J.hide <<< unwrap
+
+displayOne :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) Unit
+displayOne = J.display <<< unwrap
+
+setVisibleOne :: forall e tag. Boolean -> JQuery (One tag) -> Eff (dom :: DOM | e) Unit
+setVisibleOne b = J.setVisible b <<< unwrap
+
+toggleOne :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) Unit
+toggleOne = J.toggle <<< unwrap
