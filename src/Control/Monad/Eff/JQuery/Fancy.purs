@@ -83,6 +83,9 @@ setText s = J.setText s <<< unwrap
 getText :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) String
 getText = J.getText <<< unwrap
 
+hide :: forall e tag. JQuery Many -> Eff (dom :: DOM | e) Unit
+hide = J.hide <<< unwrap
+
 hideOne :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) Unit
 hideOne = J.hide <<< unwrap
 
