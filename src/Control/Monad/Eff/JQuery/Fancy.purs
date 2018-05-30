@@ -18,8 +18,9 @@ import Data.Newtype (unwrap)
 import Data.Tuple (Tuple(..))
 import Partial.Unsafe (unsafeCrashWith)
 
-import Control.Monad.Eff.JQuery.Fancy.Internal (JQuery(MkJQuery), One, widthImpl)
+import Control.Monad.Eff.JQuery.Fancy.Internal (JQuery(MkJQuery), Many, One, widthImpl)
 import Control.Monad.Eff.JQuery.Fancy.Internal (None, One, Many, JQuery) as ForReExport
+
 
 width :: forall e tag. JQuery (One tag) -> Eff (dom :: DOM | e) Number
 width = widthImpl <<< unwrap
@@ -29,6 +30,15 @@ clearOne = J.clear <<< unwrap
 
 getProp :: forall e tag. String -> JQuery (One tag) -> Eff ( dom :: DOM | e) Foreign
 getProp s = J.getProp s <<< unwrap
+
+select ::
+     forall e.
+     Selector
+  -> Eff (dom :: DOM | e) (Maybe (JQuery Many))
+select s = do
+  j <- J.select s
+  els <- J.toArray j
+  pure $ if length els > 0 then Just (MkJQuery j) else Nothing
 
 selectOne ::
      forall e tag.
