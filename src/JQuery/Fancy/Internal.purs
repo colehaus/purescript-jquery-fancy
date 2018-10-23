@@ -1,4 +1,4 @@
-module Control.Monad.Eff.JQuery.Fancy.Internal where
+module JQuery.Fancy.Internal where
 
 import Data.Newtype (class Newtype)
 import Effect (Effect)

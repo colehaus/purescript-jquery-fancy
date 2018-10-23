@@ -1,5 +1,5 @@
-module Control.Monad.Eff.JQuery.Fancy
-  ( module Control.Monad.Eff.JQuery.Fancy
+module JQuery.Fancy
+  ( module JQuery.Fancy
   , module ForReExport
   ) where
 
@@ -17,8 +17,8 @@ import JQuery as J
 import Partial.Unsafe (unsafeCrashWith)
 import Web.Event.Event (EventType)
 
-import Control.Monad.Eff.JQuery.Fancy.Internal (JQuery(MkJQuery), Many, One, widthImpl)
-import Control.Monad.Eff.JQuery.Fancy.Internal (None, One, Many, JQuery) as ForReExport
+import JQuery.Fancy.Internal (JQuery(MkJQuery), Many, One, widthImpl)
+import JQuery.Fancy.Internal (None, One, Many, JQuery) as ForReExport
 
 
 width :: forall tag. JQuery (One tag) -> Effect Number
